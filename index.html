@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoFast - Shopping Rapide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">GoFast</h1>
+                <div class="header-right">
+                    <button class="cart-btn" id="cartButton">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="hero.mp4" type="video/mp4" />
+    Votre navigateur ne supporte pas la vidéo.
+  </video>
+  <div class="hero-text">
+    <h1>Shopping Rapide,<br>Livraison Express</h1>
+    <p>Découvrez les meilleures offres du moment</p>
+  </div>
+</section>
+    
+    <!-- Dans la section categories, remplace par : -->
+<section class="categories">
+    <div class="container">
+        <div class="categories-grid">
+            <button class="category-btn active" data-category="all">
+                <i class="fas fa-th-large category-icon"></i>
+                Tous
+            </button>
+            <button class="category-btn" data-category="habits">
+                <i class="fas fa-tshirt category-icon"></i>
+                Habits
+            </button>
+            <button class="category-btn" data-category="sacs">
+                <i class="fas fa-shopping-bag category-icon"></i>
+                Sacs
+            </button>
+            <button class="category-btn" data-category="chaussures">
+                <i class="fas fa-shoe-prints category-icon"></i>
+                Chaussures
+            </button>
+            <button class="category-btn" data-category="electronique">
+                <i class="fas fa-laptop category-icon"></i>
+                Électronique
+            </button>
+            <button class="category-btn" data-category="cosmetiques">
+                <i class="fas fa-paint-brush category-icon"></i>
+                Cosmétique
+            </button>
+            <button class="category-btn" data-category="autres">
+                <i class="fas fa-box category-icon"></i>
+                Autres
+            </button>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Section Produits Populaires -->
+    <section class="popular-products">
+        <div class="container">
+            <h2 class="section-title">Les Plus Vendus</h2>
+            <div class="products-grid" id="popularProducts">
+                <!-- Les 8 produits populaires seront injectés ici par JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Tous les Produits -->
+    <section class="all-products">
+        <div class="container">
+            <h2 class="section-title">Tous Nos Produits</h2>
+            <div class="products-grid" id="allProducts">
+                <!-- Tous les produits seront injectés ici par JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">À Propos de GoFast</h3>
+                    <p class="footer-text">
+                    GoFast est un service d’importation spécialisé qui permet de faire venir des produits et articles directement de la Chine vers la République Démocratique du Congo, et ce, dans plusieurs provinces. Ce service facilite l’achat en gros, souvent par lots de 10, 20, 50 pièces, ou plus, pour répondre aux besoins des revendeurs et des particuliers souhaitant bénéficier de prix avantageux.
+
+La particularité de GoFast, c’est sa rapidité et sa sécurité : toutes les commandes sont soigneusement suivies pour garantir la livraison dans les meilleures conditions, avec un suivi transparent et sécurisé. Grâce à GoFast, vous avez accès à un large catalogue de produits importés à prix compétitifs, tout en bénéficiant d’un service fiable et adapté au marché local.
+
+Sur notre site, vous pouvez facilement commander les articles souhaités via WhatsApp, ce qui vous permet d’avoir un contact direct et rapide avec nous pour toutes vos demandes.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact & Commandes</h3>
+                    <p class="footer-text">
+                        <strong>Commandes uniquement via WhatsApp :</strong>
+                    </p>
+                    <div class="contact-info">
+                        <a href="https://wa.me/243970332222" class="contact-link" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            +243 970 332 222
+                        </a>
+                        <a href="https://instagram.com/gofast.logistics" class="contact-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            @gofast.logistics
+                        </a>
+                    </div>
+                    <p class="footer-note">
+                        Cliquez sur le bouton "Commander via WhatsApp" dans votre panier pour finaliser votre commande.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>2025 GoFast - Shopping Rapide. babehoansima@gmail.com Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Panier Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-overlay" id="cartOverlay"></div>
+        <div class="cart-container">
+            <div class="cart-header">
+                <h2>Votre Panier</h2>
+                <button class="close-cart" id="closeCart">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="cart-items" id="cartItems">
+                <!-- Les articles du panier seront injectés ici -->
+                <div class="empty-cart" id="emptyCart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>Votre panier est vide</p>
+                </div>
+            </div>
+            
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total :</span>
+                    <span class="total-price" id="cartTotal">0.00 $</span>
+                </div>
+                <a href="#" class="whatsapp-order-btn" id="whatsappOrderBtn" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    Commander via WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="produits.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
